@@ -1,0 +1,19 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  Set_create.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+C:\Users\NorhBei\OneDrive\ADIC_Project\Random_program_V1.1\Random_program_V1.1\Set_create.cpp(93,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Set_ops.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  Vector_create.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+C:\Users\NorhBei\OneDrive\ADIC_Project\Random_program_V1.1\Random_program_V1.1\Vector_create.cpp(120,36): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+C:\Users\NorhBei\OneDrive\ADIC_Project\Random_program_V1.1\Random_program_V1.1\Vector_create.cpp(120,36): warning C4244:         with
+C:\Users\NorhBei\OneDrive\ADIC_Project\Random_program_V1.1\Random_program_V1.1\Vector_create.cpp(120,36): warning C4244:         [
+C:\Users\NorhBei\OneDrive\ADIC_Project\Random_program_V1.1\Random_program_V1.1\Vector_create.cpp(120,36): warning C4244:             _Ty=float
+C:\Users\NorhBei\OneDrive\ADIC_Project\Random_program_V1.1\Random_program_V1.1\Vector_create.cpp(120,36): warning C4244:         ]
+  Vector_ops.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+  View.cpp
+  Generating Code...
+  Random_program_V1.1.vcxproj -> C:\Users\NorhBei\OneDrive\ADIC_Project\Random_program_V1.1\x64\Debug\Random_program_V1.1.exe

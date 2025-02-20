@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB5AFD8D-E92B-43E2-B410-299DA2C986BF}|Random_program_V1.1\\Random_program_V1.1.vcxproj|C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DB5AFD8D-E92B-43E2-B410-299DA2C986BF}|Random_program_V1.1\\Random_program_V1.1.vcxproj|solutionrelative:Random_program_V1.1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB5AFD8D-E92B-43E2-B410-299DA2C986BF}|Random_program_V1.1\\Random_program_V1.1.vcxproj|C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\Vector_create.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DB5AFD8D-E92B-43E2-B410-299DA2C986BF}|Random_program_V1.1\\Random_program_V1.1.vcxproj|solutionrelative:Random_program_V1.1\\Vector_create.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB5AFD8D-E92B-43E2-B410-299DA2C986BF}|Random_program_V1.1\\Random_program_V1.1.vcxproj|C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\Set_ops.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DB5AFD8D-E92B-43E2-B410-299DA2C986BF}|Random_program_V1.1\\Random_program_V1.1.vcxproj|solutionrelative:Random_program_V1.1\\Set_ops.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Set_ops.cpp",
+              "DocumentMoniker": "C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\Set_ops.cpp",
+              "RelativeDocumentMoniker": "Random_program_V1.1\\Set_ops.cpp",
+              "ToolTip": "C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\Set_ops.cpp",
+              "RelativeToolTip": "Random_program_V1.1\\Set_ops.cpp",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE8AAACoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-20T11:10:35.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Vector_create.cpp",
+              "DocumentMoniker": "C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\Vector_create.cpp",
+              "RelativeDocumentMoniker": "Random_program_V1.1\\Vector_create.cpp",
+              "ToolTip": "C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\Vector_create.cpp",
+              "RelativeToolTip": "Random_program_V1.1\\Vector_create.cpp",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAAABMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-13T14:53:20.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\main.cpp",
+              "RelativeDocumentMoniker": "Random_program_V1.1\\main.cpp",
+              "ToolTip": "C:\\Users\\NorhBei\\OneDrive\\ADIC_Project\\Random_program_V1.1\\Random_program_V1.1\\main.cpp",
+              "RelativeToolTip": "Random_program_V1.1\\main.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-21T20:47:39.123Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
