@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Cpp-Generator\\Random_program_V1.2\\",
+  "WorkspaceRootPath": "C:\\Cpp-Generator\\Random_program_V1.2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B34E28AF-B8F4-4DE7-A349-9FAE32A070CF}|Random_program_V1.2\\Random_program_V1.2.vcxproj|D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{B34E28AF-B8F4-4DE7-A349-9FAE32A070CF}|Random_program_V1.2\\Random_program_V1.2.vcxproj|C:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B34E28AF-B8F4-4DE7-A349-9FAE32A070CF}|Random_program_V1.2\\Random_program_V1.2.vcxproj|solutionrelative:Random_program_V1.2\\Vector_create.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Vector_create.cpp",
-              "DocumentMoniker": "D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp",
+              "DocumentMoniker": "C:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp",
               "RelativeDocumentMoniker": "Random_program_V1.2\\Vector_create.cpp",
-              "ToolTip": "D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp",
+              "ToolTip": "C:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp",
               "RelativeToolTip": "Random_program_V1.2\\Vector_create.cpp",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAswG8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEEAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-26T17:27:33.915Z",
               "EditorCaption": ""
