@@ -1,0 +1,97 @@
+﻿  random_stl_program.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(46,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(47,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(48,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(49,11): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(50,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(54,15): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(56,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(57,52): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(59,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(60,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(61,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(63,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(65,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(66,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(71,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(72,52): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(73,12): warning C4858: 正在放弃返回值: This member function returns a bool indicating whether the collection is empty and has no other effects. It is not useful to call this member function and discard the return value. Use the 'clear()' member function if you want to erase all elements.
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(74,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(75,12): warning C4858: 正在放弃返回值: This member function returns a bool indicating whether the collection is empty and has no other effects. It is not useful to call this member function and discard the return value. Use the 'clear()' member function if you want to erase all elements.
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(83,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(84,11): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(87,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(95,7): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244: “初始化”: 从“_Ty”转换到“float”，可能丢失数据
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:         ]
+  (编译源文件“../../Random_program_V1.2/Random_program_V1.2/random_stl_program.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(68,7):
+          查看对正在编译的函数 模板 实例化“void std::vector<float,std::allocator<float>>::emplace_back<int>(int &&)”的引用
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(858,24):
+          查看对正在编译的函数 模板 实例化“_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<int>(int &&)”的引用
+          with
+          [
+              _Ty=float
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(776,20):
+          查看对正在编译的函数 模板 实例化“_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int>(int &&)”的引用
+          with
+          [
+              _Ty=float
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(791,18):
+          查看对正在编译的函数 模板 实例化“void std::_Construct_in_place<float,_Ty>(float &,_Ty &&) noexcept”的引用
+          with
+          [
+              _Ty=int
+          ]
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244: “初始化”: 从“_Ty”转换到“_Ty”，可能丢失数据
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         and
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:             _Ty=float
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         ]
+  (编译源文件“../../Random_program_V1.2/Random_program_V1.2/random_stl_program.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82):
+      模板实例化上下文(最早的实例化上下文)为
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(779,17):
+          查看对正在编译的函数 模板 实例化“float *std::vector<float,std::allocator<float>>::_Emplace_reallocate<_Ty>(float *const ,_Ty &&)”的引用
+          with
+          [
+              _Ty=int
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(830,23):
+          查看对正在编译的函数 模板 实例化“void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int>(_Alloc &,_Objty *const ,int &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<float>,
+              _Ty=float,
+              _Objty=float
+          ]
+  
+  program_testing_v1.2.vcxproj -> D:\Cpp-Generator\program_testing_v1.2\x64\Debug\program_testing_v1.2.exe
