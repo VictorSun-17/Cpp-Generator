@@ -181,12 +181,15 @@ std::string create_vec(int index) {
 	std::string type;
 	int times = random_Int(1, 10);
 	int vec_elements_num = random_Int(5, 10);
+	/*int vec_rows = random_Int(1, 2);*/
+	int vec_rows = 10;
 	std::vector<int> temp_int = {};
 	std::vector<float> temp_float = {};
 	std::vector<double> temp_double = {};
 	std::vector<char> temp_char = {};
 	std::vector<bool> temp_bool = {};
 
+	std::vector<std::vector<int>> temp_2d_int;
 	std::vector<std::pair<int, std::string>> vec_records = {};
 
 
@@ -208,7 +211,8 @@ std::string create_vec(int index) {
 
 	for (int n = 0; n < index; n++) {
 
-		switch (random_Int(1, 5)) {
+		/*switch (random_Int(1, 5))*/
+		switch (1) {
 		case 1:
 			type = "int";
 			data_type = INT;
@@ -239,200 +243,317 @@ std::string create_vec(int index) {
 		vec_records.push_back(std::make_pair(n, type));
 
 
-		for (int i = 1; i <= vec_elements_num; i++)
-		{
+		if (vec_rows > 1) {
+			for (int m = 1; m <= vec_rows; m++) {
+				for (int i = 1; i <= vec_elements_num; i++)
+				{
 
-			switch (data_type) {
-			case INT: //int
-				switch (random_Int(1, 2)) {
-				case 1:
-					temp_int.push_back(random_Int(-100, 100));
-					break;
+					switch (data_type) {
+					case INT: //int
+						switch (random_Int(1, 2)) {
+						case 1:
+							temp_int.push_back(random_Int(-100, 100));
+							break;
 
-				case 2:
-					temp_int.push_back(random_Bool());
-					break;
+						case 2:
+							temp_int.push_back(random_Bool());
+							break;
+						}
+						break;
+
+
+					case FLOAT: //float
+						switch (random_Int(1, 3)) {
+
+						case 1:
+							temp_float.push_back(random_Int(-100, 100));
+							break;
+
+						case 2:
+							temp_float.push_back(random_Bool());
+							break;
+
+						case 3:
+							temp_float.push_back(random_Float(-100, 100));
+							break;
+
+						}
+						break;
+
+
+					case DOUBLE: //double
+						switch (random_Int(1, 4)) {
+						case 1:
+							temp_double.push_back(random_Int(-100, 100));
+							break;
+
+						case 2:
+							temp_double.push_back(random_Bool());
+							break;
+
+						case 3:
+							temp_double.push_back(random_Float(-100, 100));
+							break;
+
+						case 4:
+							temp_double.push_back(random_Double(-100, 100));
+							break;
+
+						}
+						break;
+					case CHAR: //char
+
+						temp_char.push_back(random_Char());
+
+
+
+						break;
+					case BOOL: //bool
+						temp_bool.push_back(random_Bool());
+						break;
+
+
+					}
+
 				}
-				break;
+
+				temp_2d_int.push_back(temp_int);
+				if (data_type == INT) {
+
+					for (int k = 1; k <= vec_elements_num; k++) {
+						oss += std::to_string(temp_int[k - 1]);
+						if (k != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
+					if (m < vec_rows) {
+						oss += "}, {";
+					}
+					else {
+						oss += "}";
+					}
+					temp_int.clear();
+				}
 
 
-			case FLOAT: //float
-				switch (random_Int(1, 3)) {
+			}
+			//for (const auto& row : temp_2d_int) {
+			//	for (const auto& val : row) {
+			//		std::cout << val << " ";
+			//	}
+			//	std::cout << std::endl;
+			//}
 
-				case 1:
-					temp_float.push_back(random_Int(-100, 100));
-					break;
+			code += "std::vector<std::vector<" + type + ">> vec_" + std::to_string(n) + " = { {" + oss + " };\n";
+			oss = {};
 
-				case 2:
-					temp_float.push_back(random_Bool());
-					break;
 
-				case 3:
-					temp_float.push_back(random_Float(-100, 100));
-					break;
+			if (data_type == INT) {
+
+				code += "for (const auto& row : vec_" + std::to_string(n) + ") { \n";
+				code += "	for (const auto& val : row) {\n";
+				code += "		std::cout << val << \"\"; \n";
+				code += "	}\n";
+				code += "	std::cout << std::endl;\n";
+				code += "}\n";
+			}
+		}
+
+			if (vec_rows == 1) {
+				for (int i = 1; i <= vec_elements_num; i++)
+				{
+
+					switch (data_type) {
+					case INT: //int
+						switch (random_Int(1, 2)) {
+						case 1:
+							temp_int.push_back(random_Int(-100, 100));
+							break;
+
+						case 2:
+							temp_int.push_back(random_Bool());
+							break;
+						}
+						break;
+
+
+					case FLOAT: //float
+						switch (random_Int(1, 3)) {
+
+						case 1:
+							temp_float.push_back(random_Int(-100, 100));
+							break;
+
+						case 2:
+							temp_float.push_back(random_Bool());
+							break;
+
+						case 3:
+							temp_float.push_back(random_Float(-100, 100));
+							break;
+
+						}
+						break;
+
+
+					case DOUBLE: //double
+						switch (random_Int(1, 4)) {
+						case 1:
+							temp_double.push_back(random_Int(-100, 100));
+							break;
+
+						case 2:
+							temp_double.push_back(random_Bool());
+							break;
+
+						case 3:
+							temp_double.push_back(random_Float(-100, 100));
+							break;
+
+						case 4:
+							temp_double.push_back(random_Double(-100, 100));
+							break;
+
+						}
+						break;
+					case CHAR: //char
+
+						temp_char.push_back(random_Char());
+
+
+
+						break;
+					case BOOL: //bool
+						temp_bool.push_back(random_Bool());
+						break;
+
+
+					}
+
+
+
+
 
 				}
-				break;
 
 
-			case DOUBLE: //double
-				switch (random_Int(1, 4)) {
-				case 1:
-					temp_double.push_back(random_Int(-100, 100));
-					break;
+				if (data_type == INT) {
 
-				case 2:
-					temp_double.push_back(random_Bool());
-					break;
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_int[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
 
-				case 3:
-					temp_double.push_back(random_Float(-100, 100));
-					break;
-
-				case 4:
-					temp_double.push_back(random_Double(-100, 100));
-					break;
-
+					temp_int = {};
 				}
-				break;
-			case CHAR: //char
+				else if (data_type == FLOAT) {
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_float[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
 
-				temp_char.push_back(random_Char());
+					temp_float = {};
+				}
 
 
+				else if (data_type == DOUBLE) {
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_double[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
 
-				break;
-			case BOOL: //bool
-				temp_bool.push_back(random_Bool());
-				break;
+					temp_double = {};
+				}
 
+				else if (data_type == CHAR) {
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_char[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
+
+					temp_char = {};
+				}
+
+				else {
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_bool[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
+					temp_bool = {};
+				}
+
+
+				//print out secton
+
+				code += "std::vector<" + type + "> vec_" + std::to_string(n) + " = {" + oss + "};\n";
+				oss = {};
+
+
+				if (data_type == INT) {
+
+					code += "for (int num : vec_" + std::to_string(n) + ") { \n";
+
+					code += "	std::cout << num << ' ';\n";
+
+					code += "	std::cout << std::endl;\n";
+					code += "}\n";
+				}
+
+				else if (data_type == FLOAT) {
+					code += "for (float num : vec_" + std::to_string(n) + ") { \n";
+
+					code += "	std::cout << num << ' ';\n";
+
+					code += "	std::cout << std::endl;\n";
+					code += "}\n";
+				}
+
+
+				else if (data_type == DOUBLE) {
+					code += "for (double num : vec_" + std::to_string(n) + ") { \n";
+
+					code += "	std::cout << num << ' ';\n";
+
+					code += "	std::cout << std::endl;\n";
+					code += "}\n";
+				}
+
+				else if (data_type == CHAR) {
+					code += "for (char num : vec_" + std::to_string(n) + ") { \n";
+
+					code += "	std::cout << num << ' ';\n";
+
+					code += "	std::cout << std::endl;\n";
+					code += "}\n";
+				}
+
+				else {
+					code += "for (bool num : vec_" + std::to_string(n) + ") { \n";
+
+					code += "	std::cout << num << ' ';\n";
+
+					code += "	std::cout << std::endl;\n";
+					code += "}\n";
+				}
 
 			}
 
 
+			//code += random_vec_op(index, vec_records);
 
 
 
-		}
 
-
-		if (data_type == INT) {
-
-			for (int i = 1; i <= vec_elements_num; i++) {
-				oss += std::to_string(temp_int[i - 1]);
-				if (i != vec_elements_num) {
-					oss += ", "; // Add a separator between numbers
-				}
-			}
-
-			temp_int = {};
-		}
-		else if (data_type == FLOAT) {
-			for (int i = 1; i <= vec_elements_num; i++) {
-				oss += std::to_string(temp_float[i - 1]);
-				if (i != vec_elements_num) {
-					oss += ", "; // Add a separator between numbers
-				}
-			}
-
-			temp_float = {};
-		}
-
-
-		else if (data_type == DOUBLE) {
-			for (int i = 1; i <= vec_elements_num; i++) {
-				oss += std::to_string(temp_double[i - 1]);
-				if (i != vec_elements_num) {
-					oss += ", "; // Add a separator between numbers
-				}
-			}
-
-			temp_double = {};
-		}
-
-		else if (data_type == CHAR) {
-			for (int i = 1; i <= vec_elements_num; i++) {
-				oss += std::to_string(temp_char[i - 1]);
-				if (i != vec_elements_num) {
-					oss += ", "; // Add a separator between numbers
-				}
-			}
-
-			temp_char = {};
-		}
-
-		else {
-			for (int i = 1; i <= vec_elements_num; i++) {
-				oss += std::to_string(temp_bool[i - 1]);
-				if (i != vec_elements_num) {
-					oss += ", "; // Add a separator between numbers
-				}
-			}
-			temp_bool = {};
-		}
-
-
-		//print out secton
-
-		code += "std::vector<" + type + "> vec_" + std::to_string(n) + " = {" + oss + "};\n";
-		oss = {};
-
-
-		if (data_type == INT) {
-
-			code += "for (int num : vec_" + std::to_string(n) + ") { \n";
-
-			code += "	std::cout << num << ' ';\n";
-
-			code += "	std::cout << std::endl;\n";
-			code += "}\n";
-		}
-
-		else if (data_type == FLOAT) {
-			code += "for (float num : vec_" + std::to_string(n) + ") { \n";
-
-			code += "	std::cout << num << ' ';\n";
-
-			code += "	std::cout << std::endl;\n";
-			code += "}\n";
-		}
-
-
-		else if (data_type == DOUBLE) {
-			code += "for (double num : vec_" + std::to_string(n) + ") { \n";
-
-			code += "	std::cout << num << ' ';\n";
-
-			code += "	std::cout << std::endl;\n";
-			code += "}\n";
-		}
-
-		else if (data_type == CHAR) {
-			code += "for (char num : vec_" + std::to_string(n) + ") { \n";
-
-			code += "	std::cout << num << ' ';\n";
-
-			code += "	std::cout << std::endl;\n";
-			code += "}\n";
-		}
-
-		else {
-			code += "for (bool num : vec_" + std::to_string(n) + ") { \n";
-
-			code += "	std::cout << num << ' ';\n";
-
-			code += "	std::cout << std::endl;\n";
-			code += "}\n";
-		}
 	}
-
-
-
-
-	code += random_vec_op(index, vec_records);
-
-
 	return code;
-
-
 }

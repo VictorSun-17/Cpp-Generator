@@ -13,86 +13,47 @@ int RdmInt(int min, int max) {
 }
 
 int main() {
-std::vector<char> vec_0 = {114, 119, 106, 73, 112};
-for (char num : vec_0) { 
-	std::cout << num << ' ';
+std::vector<std::vector<int>> vec_0 = { {0, 1, -58, -9, 1}, {70, 1, -41, 59, -60}, {61, -83, -85, 0, 1}, {-6, -92, 1, -97, 0}, {1, -83, 40, 84, 0}, {1, -96, 6, 0, 89}, {1, 84, 1, 1, 1}, {-38, 1, 1, 0, 0}, {19, 1, 0, 1, -40}, {1, 81, 30, -99, 6} };
+for (const auto& row : vec_0) { 
+	for (const auto& val : row) {
+		std::cout << val << ""; 
+	}
 	std::cout << std::endl;
 }
-std::vector<float> vec_1 = {1.000000, -44.212162, 82.000000, 1.000000, -10.000000};
-for (float num : vec_1) { 
-	std::cout << num << ' ';
+std::vector<std::vector<int>> vec_1 = { {0, -11, 36, -56, 70}, {24, 1, -77, 0, -32}, {-96, 12, -13, 1, 1}, {0, 1, 1, 1, 1}, {1, 0, 37, 1, 92}, {1, 0, 80, 0, 37}, {0, -80, -53, 0, 0}, {0, -77, 83, 41, 0}, {-31, 1, 0, 7, 0}, {1, 0, -12, -91, 1} };
+for (const auto& row : vec_1) { 
+	for (const auto& val : row) {
+		std::cout << val << ""; 
+	}
 	std::cout << std::endl;
 }
-std::vector<float> vec_2 = {0.000000, 1.000000, -6.000000, -2.000000, -64.323868};
-for (float num : vec_2) { 
-	std::cout << num << ' ';
+std::vector<std::vector<int>> vec_2 = { {-74, 1, 0, 1, 8}, {28, 0, 1, 1, 17}, {1, 12, 10, -72, 0}, {38, -43, 0, 1, 0}, {-12, 1, -85, 1, 75}, {2, 83, 0, 10, 85}, {0, 1, 0, -38, 1}, {0, -73, 0, 39, 0}, {65, 0, -91, 51, 0}, {1, 56, 96, 27, 1} };
+for (const auto& row : vec_2) { 
+	for (const auto& val : row) {
+		std::cout << val << ""; 
+	}
 	std::cout << std::endl;
 }
-std::vector<double> vec_3 = {0.000000, 0.000000, 0.000000, 77.819147, -82.348094};
-for (double num : vec_3) { 
-	std::cout << num << ' ';
+std::vector<std::vector<int>> vec_3 = { {1, -72, 96, 58, 1}, {0, 0, 22, 0, 0}, {0, -91, 1, 0, -81}, {42, 1, 1, 1, -89}, {0, 0, 56, 1, 1}, {1, -21, 1, 1, 47}, {13, 99, 29, -37, 1}, {0, 1, 1, 1, 0}, {0, 1, 1, 1, 35}, {1, 29, 0, 28, 1} };
+for (const auto& row : vec_3) { 
+	for (const auto& val : row) {
+		std::cout << val << ""; 
+	}
 	std::cout << std::endl;
 }
-std::vector<float> vec_4 = {-86.000000, -57.000000, 84.000000, 13.730278, -31.000000};
-for (float num : vec_4) { 
-	std::cout << num << ' ';
+std::vector<std::vector<int>> vec_4 = { {72, -38, 1, 0, -35}, {1, 1, 0, -77, 0}, {-67, -68, 0, 60, 1}, {3, 47, 0, 1, 0}, {0, -46, 1, -69, 1}, {0, 0, 0, 0, -21}, {17, 1, 1, 38, -38}, {1, 1, -16, 49, 9}, {-39, 1, 92, 91, 43}, {1, 0, 1, 74, 88} };
+for (const auto& row : vec_4) { 
+	for (const auto& val : row) {
+		std::cout << val << ""; 
+	}
 	std::cout << std::endl;
 }
-std::vector<char> vec_5 = {49, 99, 100, 53, 53};
-for (char num : vec_5) { 
-	std::cout << num << ' ';
+std::vector<std::vector<int>> vec_5 = { {-60, -39, 1, 0, 67}, {8, -100, -64, 86, 0}, {1, -60, -50, 1, 16}, {80, 88, 0, 1, 1}, {85, 1, -36, 0, 0}, {0, -1, 8, -4, 1}, {31, -92, -85, 1, 0}, {24, 32, 92, 32, 1}, {1, 0, 1, 0, 0}, {1, 61, -69, -60, 64} };
+for (const auto& row : vec_5) { 
+	for (const auto& val : row) {
+		std::cout << val << ""; 
+	}
 	std::cout << std::endl;
 }
-vec_3.end();
-vec_5.rbegin();
-vec_3.emplace(vec_3.begin() + RdmInt(0, vec_3.size()-1) ,34); 
-vec_4.size();
-vec_3.cbegin();
-vec_1.shrink_to_fit();
-vec_0.shrink_to_fit();
-std::sort(vec_5.begin(), vec_5.end());
-vec_2.max_size();
-std::sort(vec_1.begin(), vec_1.end());
-vec_2.begin();
-vec_5.insert(vec_5.begin() + RdmInt(0, vec_5.size()-1),38); 
-vec_0.clear();
-vec_0.crend();
-vec_5.back();
-vec_4.crbegin();
-std::reverse(vec_0.begin(), vec_0.end());
-vec_1.cend();
-vec_0.shrink_to_fit();
-vec_4.back();
-vec_5.cbegin();
-vec_5.emplace_back(64);
-vec_4.emplace_back(64);
-vec_3.reserve(9069); 
-std::sort(vec_5.begin(), vec_5.end());
-vec_5.back();
-vec_3.insert(vec_3.begin() + RdmInt(0, vec_3.size()-1),30); 
-vec_4.empty();
-vec_3.crend();
-vec_0.empty();
-vec_4.assign(4, 7);
-vec_2.push_back(76); 
-vec_4.clear();
-vec_0.push_back(78); 
-vec_3.reserve(7942); 
-std::reverse(vec_2.begin(), vec_2.end());
-vec_2.resize(8);
-vec_3.rend();
-vec_1.size();
-vec_4.reserve(1585); 
-std::reverse(vec_5.begin(), vec_5.end());
-vec_0.crend();
-std::sort(vec_2.begin(), vec_2.end());
-vec_4.emplace_back(53);
-vec_4.assign(7, 5);
-vec_0.shrink_to_fit();
-vec_2.clear();
-vec_0.clear();
-vec_3.clear();
-vec_5.rend();
-vec_2.swap(vec_1);
     return 0;
 }
