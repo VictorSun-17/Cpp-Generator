@@ -9,51 +9,98 @@
 #include <string>
 
 int RdmInt(int min, int max) {
-    return min + rand() % (max - min + 1);
+	if (max - min + 1 != 0)
+		return min + rand() % (max - min + 1);
+	else
+		return 0;
+}
+
+uint32_t simple_hash(const void* data, size_t len) {
+    const uint8_t* bytes = static_cast<const uint8_t*>(data);
+    uint32_t hash = 2166136261u; // FNV offset basis
+    for (size_t i = 0; i < len; ++i) {
+        hash ^= bytes[i];
+        hash *= 16777619u; // FNV prime
+    }
+    return hash;
+}
+
+template <typename T>
+void append_data(std::vector<uint8_t>& buffer, const std::vector<T>& vec) {
+    const uint8_t* raw = reinterpret_cast<const uint8_t*>(vec.data());
+    buffer.insert(buffer.end(), raw, raw + vec.size() * sizeof(T));
+}
+
+void append_data(std::vector<uint8_t>& buffer, const std::vector<bool>& vec) {
+	for (bool b : vec) {
+		buffer.push_back(b ? 1 : 0);
+	}
 }
 
 int main() {
-std::vector<std::vector<int>> vec_0 = { {0, 1, -58, -9, 1}, {70, 1, -41, 59, -60}, {61, -83, -85, 0, 1}, {-6, -92, 1, -97, 0}, {1, -83, 40, 84, 0}, {1, -96, 6, 0, 89}, {1, 84, 1, 1, 1}, {-38, 1, 1, 0, 0}, {19, 1, 0, 1, -40}, {1, 81, 30, -99, 6} };
-for (const auto& row : vec_0) { 
-	for (const auto& val : row) {
-		std::cout << val << ""; 
-	}
-	std::cout << std::endl;
-}
-std::vector<std::vector<int>> vec_1 = { {0, -11, 36, -56, 70}, {24, 1, -77, 0, -32}, {-96, 12, -13, 1, 1}, {0, 1, 1, 1, 1}, {1, 0, 37, 1, 92}, {1, 0, 80, 0, 37}, {0, -80, -53, 0, 0}, {0, -77, 83, 41, 0}, {-31, 1, 0, 7, 0}, {1, 0, -12, -91, 1} };
-for (const auto& row : vec_1) { 
-	for (const auto& val : row) {
-		std::cout << val << ""; 
-	}
-	std::cout << std::endl;
-}
-std::vector<std::vector<int>> vec_2 = { {-74, 1, 0, 1, 8}, {28, 0, 1, 1, 17}, {1, 12, 10, -72, 0}, {38, -43, 0, 1, 0}, {-12, 1, -85, 1, 75}, {2, 83, 0, 10, 85}, {0, 1, 0, -38, 1}, {0, -73, 0, 39, 0}, {65, 0, -91, 51, 0}, {1, 56, 96, 27, 1} };
-for (const auto& row : vec_2) { 
-	for (const auto& val : row) {
-		std::cout << val << ""; 
-	}
-	std::cout << std::endl;
-}
-std::vector<std::vector<int>> vec_3 = { {1, -72, 96, 58, 1}, {0, 0, 22, 0, 0}, {0, -91, 1, 0, -81}, {42, 1, 1, 1, -89}, {0, 0, 56, 1, 1}, {1, -21, 1, 1, 47}, {13, 99, 29, -37, 1}, {0, 1, 1, 1, 0}, {0, 1, 1, 1, 35}, {1, 29, 0, 28, 1} };
-for (const auto& row : vec_3) { 
-	for (const auto& val : row) {
-		std::cout << val << ""; 
-	}
-	std::cout << std::endl;
-}
-std::vector<std::vector<int>> vec_4 = { {72, -38, 1, 0, -35}, {1, 1, 0, -77, 0}, {-67, -68, 0, 60, 1}, {3, 47, 0, 1, 0}, {0, -46, 1, -69, 1}, {0, 0, 0, 0, -21}, {17, 1, 1, 38, -38}, {1, 1, -16, 49, 9}, {-39, 1, 92, 91, 43}, {1, 0, 1, 74, 88} };
-for (const auto& row : vec_4) { 
-	for (const auto& val : row) {
-		std::cout << val << ""; 
-	}
-	std::cout << std::endl;
-}
-std::vector<std::vector<int>> vec_5 = { {-60, -39, 1, 0, 67}, {8, -100, -64, 86, 0}, {1, -60, -50, 1, 16}, {80, 88, 0, 1, 1}, {85, 1, -36, 0, 0}, {0, -1, 8, -4, 1}, {31, -92, -85, 1, 0}, {24, 32, 92, 32, 1}, {1, 0, 1, 0, 0}, {1, 61, -69, -60, 64} };
-for (const auto& row : vec_5) { 
-	for (const auto& val : row) {
-		std::cout << val << ""; 
-	}
-	std::cout << std::endl;
-}
+	std::vector<bool> vec_0 = {0, 1, 0, 0, 1, 1, 1, 1, 0};
+	std::vector<int> vec_1 = {1, 1, 1, 0, 1, 0, 51, -91, -86};
+	std::vector<int> vec_2 = {-20, 0, 11, 0, -58, 0, 84, 5, 86};
+	std::vector<double> vec_3 = {49.235511, -22.000000, 31.241798, 14.774010, 46.928314, -30.668050, 1.000000, -1.443525, -41.319010};
+	std::vector<bool> vec_4 = {1, 0, 1, 0, 1, 1, 0, 0, 1};
+	std::vector<bool> vec_5 = {1, 0, 0, 0, 0, 0, 0, 1, 1};
+	std::vector<bool> vec_6 = {1, 1, 0, 1, 1, 1, 1, 0, 1};
+	std::vector<bool> vec_7 = {0, 1, 1, 1, 0, 0, 1, 1, 1};
+	std::vector<char> vec_8 = {106, 116, 69, 48, 117, 119, 89, 76, 118};
+	std::vector<char> vec_9 = {71, 73, 117, 105, 78, 121, 109, 106, 105};
+	vec_2.at(RdmInt(0, vec_2.size()-1)); 
+	vec_8.resize(15);
+	vec_0.crbegin();
+	vec_5.assign(5, 4);
+	std::reverse(vec_1.begin(), vec_1.end());
+	vec_0.insert(vec_0.begin() + RdmInt(0, vec_0.size()-1),87); 
+	vec_1.empty();
+	vec_5.crbegin();
+	vec_3.begin();
+	vec_9.assign(3, 48);
+	vec_2.shrink_to_fit();
+	vec_4.max_size();
+	vec_4.rbegin();
+	vec_4.size();
+	vec_9.emplace(vec_9.begin() + RdmInt(0, vec_9.size()-1) ,53); 
+	vec_7.cbegin();
+	vec_8.assign(37,91);
+	vec_5.insert(vec_5.begin() + RdmInt(0, vec_5.size()-1),42); 
+	vec_6.crbegin();
+	vec_5.front();
+	vec_2.insert(vec_2.begin() + RdmInt(0, vec_2.size()-1),45); 
+	vec_9.max_size();
+	vec_3.reserve(7594); 
+	vec_1.erase(vec_1.begin() + RdmInt(0, vec_1.size()-1)); 
+	vec_7.cend();
+	vec_2.shrink_to_fit();
+	std::sort(vec_2.begin(), vec_2.end());
+	vec_3.cend();
+	vec_7.erase(vec_7.begin() + RdmInt(0, vec_7.size()-1)); 
+	vec_9.front();
+	vec_1.crend();
+	vec_6.crbegin();
+	vec_7.max_size();
+	vec_8.rbegin();
+	vec_0.clear();
+	vec_4.assign(4,13);
+	vec_4.size();
+	vec_1.shrink_to_fit();
+	vec_2.emplace_back(88);
+	vec_3.pop_back();
+	std::vector<uint8_t> buffer;
+	append_data(buffer, vec_0);
+	append_data(buffer, vec_1);
+	append_data(buffer, vec_2);
+	append_data(buffer, vec_3);
+	append_data(buffer, vec_4);
+	append_data(buffer, vec_5);
+	append_data(buffer, vec_6);
+	append_data(buffer, vec_7);
+	append_data(buffer, vec_8);
+	append_data(buffer, vec_9);
+	uint32_t hash_result = simple_hash(buffer.data(), buffer.size());
+	std::cout << "32 - bit hash : 0x" << std::hex << hash_result << std::dec << std::endl;
+
     return 0;
 }

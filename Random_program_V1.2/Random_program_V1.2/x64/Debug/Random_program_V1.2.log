@@ -1,13 +1,13 @@
 ﻿  Vector_create.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(269,39): warning C4244: “参数”: 从“int”转换到“_Ty”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(269,39): warning C4244:         with
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(269,39): warning C4244:         [
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(269,39): warning C4244:             _Ty=float
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(269,39): warning C4244:         ]
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(384,39): warning C4244: “参数”: 从“int”转换到“_Ty”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(384,39): warning C4244:         with
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(384,39): warning C4244:         [
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(384,39): warning C4244:             _Ty=float
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(384,39): warning C4244:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(396,39): warning C4244: “参数”: 从“int”转换到“_Ty”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(396,39): warning C4244:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(396,39): warning C4244:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(396,39): warning C4244:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(396,39): warning C4244:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(511,39): warning C4244: “参数”: 从“int”转换到“_Ty”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(511,39): warning C4244:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(511,39): warning C4244:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(511,39): warning C4244:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\Vector_create.cpp(511,39): warning C4244:         ]
   Random_program_V1.2.vcxproj -> D:\Cpp-Generator\Random_program_V1.2\x64\Debug\Random_program_V1.2.exe

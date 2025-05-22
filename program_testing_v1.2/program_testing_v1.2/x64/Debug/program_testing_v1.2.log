@@ -1,97 +1,34 @@
 ﻿  random_stl_program.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:         with
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:         [
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:             _Ty=float
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(21,39): warning C4305:         ]
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:         with
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:         [
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:             _Ty=float
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(26,71): warning C4305:         ]
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305: 'initializing': truncation from 'double' to '_Ty'
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:         with
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:         [
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:             _Ty=float
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(36,64): warning C4305:         ]
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(46,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(47,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(48,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(49,11): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(50,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(54,15): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(56,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(57,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(59,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(60,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(61,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(63,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(66,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(71,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(72,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(73,12): warning C4858: discarding return value: This member function returns a bool indicating whether the collection is empty and has no other effects. It is not useful to call this member function and discard the return value. Use the 'clear()' member function if you want to erase all elements.
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(74,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(75,12): warning C4858: discarding return value: This member function returns a bool indicating whether the collection is empty and has no other effects. It is not useful to call this member function and discard the return value. Use the 'clear()' member function if you want to erase all elements.
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(83,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(84,11): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(87,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(95,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244: 'initializing': conversion from '_Ty' to 'float', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:             _Ty=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61): warning C4244:         ]
-  (compiling source file '../../Random_program_V1.2/Random_program_V1.2/random_stl_program.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,61):
-      the template instantiation context (the oldest one first) is
-          C:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(68,7):
-          see reference to function template instantiation 'void std::vector<float,std::allocator<float>>::emplace_back<int>(int &&)' being compiled
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(858,24):
-          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<int>(int &&)' being compiled
-          with
-          [
-              _Ty=float
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(776,20):
-          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int>(int &&)' being compiled
-          with
-          [
-              _Ty=float
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(791,18):
-          see reference to function template instantiation 'void std::_Construct_in_place<float,_Ty>(float &,_Ty &&) noexcept' being compiled
-          with
-          [
-              _Ty=int
-          ]
-  
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244: 'initializing': conversion from '_Ty' to '_Ty', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:             _Ty=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         and
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:             _Ty=float
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82): warning C4244:         ]
-  (compiling source file '../../Random_program_V1.2/Random_program_V1.2/random_stl_program.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmemory(700,82):
-      the template instantiation context (the oldest one first) is
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(779,17):
-          see reference to function template instantiation 'float *std::vector<float,std::allocator<float>>::_Emplace_reallocate<_Ty>(float *const ,_Ty &&)' being compiled
-          with
-          [
-              _Ty=int
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(830,23):
-          see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int>(_Alloc &,_Objty *const ,int &&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<float>,
-              _Ty=float,
-              _Objty=float
-          ]
-  
-  program_testing_v1.2.vcxproj -> C:\Cpp-Generator\program_testing_v1.2\x64\Debug\program_testing_v1.2.exe
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(51,33): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(51,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(53,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(54,18): warning C4305: “参数”: 从“int”到“const bool”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(56,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(56,57): warning C4305: “参数”: 从“int”到“const bool”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(57,13): warning C4858: 正在放弃返回值: This member function returns a bool indicating whether the collection is empty and has no other effects. It is not useful to call this member function and discard the return value. Use the 'clear()' member function if you want to erase all elements.
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(58,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(59,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(62,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(63,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(64,12): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(65,54): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(66,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(68,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(68,57): warning C4305: “参数”: 从“int”到“const bool”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(69,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(70,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(71,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(72,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(74,52): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(75,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(78,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(79,52): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(80,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(81,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(82,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(83,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(84,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(86,17): warning C4305: “参数”: 从“int”到“const bool”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(87,12): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+  program_testing_v1.2.vcxproj -> D:\Cpp-Generator\program_testing_v1.2\x64\Debug\program_testing_v1.2.exe

@@ -38,10 +38,6 @@ std::string generateRandomSTLCode() {
 		/*      code += random_ops;*/
 
 		break;
-
-
-		// Set 是 C++ 标准库中的一个关联容器，它存储唯一的元素，并按照特定顺序进行排序。
-		// 它通常基于红黑树实现，因此查找、插入和删除操作的平均时间复杂度为 O(log n)
 	case 2:
 		for (n = 1; n <= number_of_sets; n++) {
 
@@ -103,7 +99,30 @@ int main() {
 		outFile << "#include <format>\n";
 		outFile << "#include <string>\n\n";
 		outFile << "int RdmInt(int min, int max) {\n";
-		outFile << "    return min + rand() % (max - min + 1);\n";
+		outFile << "	if (max - min + 1 != 0)\n";
+		outFile << "		return min + rand() % (max - min + 1);\n";
+		outFile << "	else\n";
+		outFile << "		return 0;\n";
+		outFile << "}\n\n";
+		outFile << "uint32_t simple_hash(const void* data, size_t len) {\n";
+		outFile << "    const uint8_t* bytes = static_cast<const uint8_t*>(data);\n";
+		outFile << "    uint32_t hash = 2166136261u; // FNV offset basis\n";
+		outFile << "    for (size_t i = 0; i < len; ++i) {\n";
+		outFile << "        hash ^= bytes[i];\n";
+		outFile << "        hash *= 16777619u; // FNV prime\n";
+		outFile << "    }\n";
+		outFile << "    return hash;\n";
+		outFile << "}\n\n";
+		outFile << "template <typename T>\n";
+		outFile << "void append_data(std::vector<uint8_t>& buffer, const std::vector<T>& vec) {\n";
+		outFile << "    const uint8_t* raw = reinterpret_cast<const uint8_t*>(vec.data());\n";
+		outFile << "    buffer.insert(buffer.end(), raw, raw + vec.size() * sizeof(T));\n";
+		outFile << "}\n\n";
+
+		outFile << "void append_data(std::vector<uint8_t>& buffer, const std::vector<bool>& vec) {\n";
+		outFile << "	for (bool b : vec) {\n";
+		outFile << "		buffer.push_back(b ? 1 : 0);\n";
+		outFile << "	}\n";
 		outFile << "}\n\n";
 		outFile << "int main() {\n";
 		outFile << randomCode;
