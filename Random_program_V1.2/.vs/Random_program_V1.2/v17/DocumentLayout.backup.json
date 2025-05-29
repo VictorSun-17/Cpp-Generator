@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B34E28AF-B8F4-4DE7-A349-9FAE32A070CF}|Random_program_V1.2\\Random_program_V1.2.vcxproj|D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B34E28AF-B8F4-4DE7-A349-9FAE32A070CF}|Random_program_V1.2\\Random_program_V1.2.vcxproj|solutionrelative:Random_program_V1.2\\Vector_create.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B34E28AF-B8F4-4DE7-A349-9FAE32A070CF}|Random_program_V1.2\\Random_program_V1.2.vcxproj|D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B34E28AF-B8F4-4DE7-A349-9FAE32A070CF}|Random_program_V1.2\\Random_program_V1.2.vcxproj|solutionrelative:Random_program_V1.2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +13,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 281,
+          "DockedWidth": 195,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -28,28 +24,9 @@
               "RelativeDocumentMoniker": "Random_program_V1.2\\Vector_create.cpp",
               "ToolTip": "D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\Vector_create.cpp",
               "RelativeToolTip": "Random_program_V1.2\\Vector_create.cpp",
-              "ViewState": "AgIAACsBAAAAAAAAAAAAADUBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAAALQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-19T19:49:58.516Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 119,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\main.cpp",
-              "RelativeDocumentMoniker": "Random_program_V1.2\\main.cpp",
-              "ToolTip": "D:\\Cpp-Generator\\Random_program_V1.2\\Random_program_V1.2\\main.cpp",
-              "RelativeToolTip": "Random_program_V1.2\\main.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAGQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-07T12:49:39.992Z",
               "EditorCaption": ""
             }
           ]

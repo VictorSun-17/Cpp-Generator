@@ -23,7 +23,7 @@ std::string generateRandomSTLCode() {
 	int times = random_Int(1, 10);
 	int operation_numbers = random_Int(1, 10);
 	int random_value = random_Int(1, 100);
-	int number_of_vecs = random_Int(5, 10);
+	int number_of_vecs = random_Int(10, 20);
 	int number_of_sets = random_Int(5, 10);
 	int i = 0;
 	int n = 0;
@@ -96,7 +96,6 @@ int main() {
 		outFile << "#include <queue>\n";
 		outFile << "#include <algorithm>\n";
 		outFile << "#include <initializer_list>\n";
-		outFile << "#include <format>\n";
 		outFile << "#include <string>\n\n";
 		outFile << "int RdmInt(int min, int max) {\n";
 		outFile << "	if (max - min + 1 != 0)\n";

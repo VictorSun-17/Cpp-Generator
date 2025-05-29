@@ -1,34 +1,82 @@
 ﻿  random_stl_program.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\format(42): warning STL4038: The contents of <format> are available only with C++20 or later.
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(51,33): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(51,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,77): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,77): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,77): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,77): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,77): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,88): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,88): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,88): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,88): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,88): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,157): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,157): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,157): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,157): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,157): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,222): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,222): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,222): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,222): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,222): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,234): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,234): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,234): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,234): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(40,234): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,76): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,76): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,76): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,76): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,76): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,87): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,87): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,87): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,87): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,87): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,101): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,101): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,101): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,101): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,101): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,112): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,112): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,112): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,112): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,112): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,145): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,145): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,145): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,145): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,145): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,191): warning C4305: “初始化”: 从“double”到“_Ty”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,191): warning C4305:         with
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,191): warning C4305:         [
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,191): warning C4305:             _Ty=float
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(43,191): warning C4305:         ]
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(47,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(48,18): warning C4305: “参数”: 从“int”到“const bool”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(52,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
 D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(53,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(54,18): warning C4305: “参数”: 从“int”到“const bool”截断
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(56,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(56,57): warning C4305: “参数”: 从“int”到“const bool”截断
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(57,13): warning C4858: 正在放弃返回值: This member function returns a bool indicating whether the collection is empty and has no other effects. It is not useful to call this member function and discard the return value. Use the 'clear()' member function if you want to erase all elements.
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(54,52): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(57,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
 D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(58,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
 D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(59,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(61,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
 D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(62,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(63,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(64,12): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(65,54): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(66,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(68,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(68,57): warning C4305: “参数”: 从“int”到“const bool”截断
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(69,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(70,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(71,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(72,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(63,12): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(64,18): warning C4305: “参数”: 从“int”到“const bool”截断
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(71,13): warning C4858: 正在放弃返回值: This member function returns a bool indicating whether the collection is empty and has no other effects. It is not useful to call this member function and discard the return value. Use the 'clear()' member function if you want to erase all elements.
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(73,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
 D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(74,52): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(75,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(78,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(79,52): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(80,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(81,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(82,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(83,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(75,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(77,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(80,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(81,16): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
 D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(84,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(86,17): warning C4305: “参数”: 从“int”到“const bool”截断
-D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(87,12): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(86,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(87,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(92,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(93,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+D:\Cpp-Generator\Random_program_V1.2\Random_program_V1.2\random_stl_program.cpp(94,8): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
   program_testing_v1.2.vcxproj -> D:\Cpp-Generator\program_testing_v1.2\x64\Debug\program_testing_v1.2.exe
