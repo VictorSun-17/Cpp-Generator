@@ -16,66 +16,98 @@
 #include "Set_ops.h"
 
 
+std::string random_transition(int vec_numbers, int set_numbers) {
+	std::string code;
+	int n = random_Int(1, 2);
+
+
+	for (int i = 1; i <= n; i++)
+	{
+		int index_set = random_Int(1, set_numbers);
+		int index_vec = random_Int(1, vec_numbers);
+		switch (random_Int(1, 2)) {
+		case 1:
+
+			code += "std::set <int> set_" + std::to_string(set_numbers + i) + "(vec_" + std::to_string(index_vec) + ".begin(), vec_" + std::to_string(index_vec) + ".end()); \n";
+		case 2:
+			code += "std::vector<int> vec_" + std::to_string(vec_numbers + i) + "(set_" + std::to_string(index_set) + ".begin(), set_" + std::to_string(index_set) + ".end()); \n";
+		}
+	}
+
+
+
+	return code;
+}
+
+
+
 // Function to generate a random STL container operation
 std::string generateRandomSTLCode() {
 	std::string code;
 	int choice = random_Int(1, 5);
 	int times = random_Int(1, 10);
-	int operation_numbers = random_Int(1, 10);
 	int random_value = random_Int(1, 100);
-	int number_of_vecs = random_Int(10, 20);
+	int number_of_vecs = random_Int(5, 10);
 	int number_of_sets = random_Int(5, 10);
 	int i = 0;
 	int n = 0;
 	//std::string random_ops = random_vec_op();
 
-	switch (1) {
-	case 1: // Vector operations
-		code += create_vec(number_of_vecs);
+	//switch (random_Int(1,2) {
+	//case 1: // Vector operations
+	code += create_vec(number_of_vecs);
 
 
 
-		/*      code += random_ops;*/
+	/*      code += random_ops;*/
 
-		break;
-	case 2:
-		for (n = 1; n <= number_of_sets; n++) {
+//	break;
+//case 2:
 
-			code += create_set(n);
-		}
+	code += create_set(number_of_sets);
 
-		code += random_set_op(number_of_sets);
+	/*code += random_set_op(number_of_sets);*/
 
-		break;
+	//break;
 
-	case 3: // Map operations
-		code += "std::map<int, std::string> m;\n";
-		code += "m[1] = \"one\";\n";
-		code += "m[2] = \"two\";\n";
-		code += "for (const auto& p : m) std::cout << p.first << : << p.second << '\\n';\n";
-		break;
+	//code += random_transition(number_of_vecs, number_of_sets);
 
-	case 4: // Queue operations
-		code += "std::queue<int> q;\n";
-		code += "q.push(1);\n";
-		code += "q.push(2);\n";
-		code += "q.push(3);\n";
-		code += "while (!q.empty()) {\n";
-		code += "    std::cout << q.front() << ' ';\n";
-		code += "    q.pop();\n";
-		code += "}\n";
-		code += "std::cout << std::endl;\n";
-		break;
+//case 3: // Map operations
+//	code += "std::map<int, std::string> m;\n";
+//	code += "m[1] = \"one\";\n";
+//	code += "m[2] = \"two\";\n";
+//	code += "for (const auto& p : m) std::cout << p.first << : << p.second << '\\n';\n";
+//	break;
 
-	case 5: // Random algorithm usage
-		code += "std::vector<int> vec = {5, 3, 4, 1, 2};\n";
-		code += "std::sort(vec.begin(), vec.end());\n";
-		code += "for (int x : vec) std::cout << x << ' ';\n";
-		code += "std::cout << std::endl;\n";
-		break;
-	}
+//case 4: // Queue operations
+//	code += "std::queue<int> q;\n";
+//	code += "q.push(1);\n";
+//	code += "q.push(2);\n";
+//	code += "q.push(3);\n";
+//	code += "while (!q.empty()) {\n";
+//	code += "    std::cout << q.front() << ' ';\n";
+//	code += "    q.pop();\n";
+//	code += "}\n";
+//	code += "std::cout << std::endl;\n";
+//	break;
 
-	return code;
+//case 5: // Random algorithm usage
+//	code += "std::vector<int> vec = {5, 3, 4, 1, 2};\n";
+//	code += "std::sort(vec.begin(), vec.end());\n";
+//	code += "for (int x : vec) std::cout << x << ' ';\n";
+//	code += "std::cout << std::endl;\n";
+//	break;
+//}
+	code += "	uint32_t hash_result = simple_hash(buffer.data(), buffer.size());\n";
+	code += "	unsigned int out = hash_result;\n";
+
+
+
+	code += "#ifdef JASPER_C\n";
+	code += "	JASPER_OUTPUT(out);\n";
+	code += "#endif\n";
+
+return code;
 }
 
 
@@ -97,6 +129,9 @@ int main() {
 		outFile << "#include <algorithm>\n";
 		outFile << "#include <initializer_list>\n";
 		outFile << "#include <string>\n\n";
+		outFile << "#ifdef JASPER_C\n";
+		outFile << "#include <jasperc.h>\n";
+		outFile << "#endif\n";
 		outFile << "int RdmInt(int min, int max) {\n";
 		outFile << "	if (max - min + 1 != 0)\n";
 		outFile << "		return min + rand() % (max - min + 1);\n";
