@@ -7,10 +7,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstdio>
-#include <format>
 #include <initializer_list>
 #include <string>
-#include "Set_create.h"
+#include "Random_program.h"
 
 
 std::set<int> create_set_int(int length = 1) {
@@ -196,11 +195,26 @@ std::string generate_set_element(std::string type) {
 
 }
 
+std::vector<set_records> merge_records_min_length(
+	const std::vector<set_records>& records1,
+	const std::vector<set_records>& records2
+) {
+	std::vector<set_records> merged;
+	size_t size = std::min(records1.size(), records2.size());
+	merged.reserve(size);
 
+	for (size_t i = 0; i < size; ++i) {
+		set_records merged_record;
+		merged_record.type = records1[i].type; // 你也可以选择 records2[i].type 或做一致性判断
+		merged_record.length = std::min(records1[i].length, records2[i].length);
+		merged.push_back(merged_record);
+	}
 
-std::string random_set_op(int n, std::vector<set_records> records) {
+	return merged;
+}
+
+std::pair<std::string, std::vector<set_records>> random_set_op(int n, std::vector<set_records> records, int operation_numbers = 10, int loop_index = 1) {
 	std::string op;
-	int operation_numbers = random_Int(30, 100);
 	int current = 0;
 	int current_2 = 0;
 	std::vector<set_records> local_records = records;
@@ -215,55 +229,55 @@ std::string random_set_op(int n, std::vector<set_records> records) {
 		switch (random_Int(1, 24)) {
 		case 1:
 			if (record_1.length != 0) {
-				op += "set_" + std::to_string(current) + ".begin(); \n";//An iterator to the first element in the container.
+				op += "	set_" + std::to_string(current) + ".begin(); \n";//An iterator to the first element in the container.
 			}
 			break;
 		case 2:
 			if (record_1.length != 0) {
-				op += "set_" + std::to_string(current) + ".cbegin(); \n";//A const_iterator to the beginning of the sequence.
+				op += "	set_" + std::to_string(current) + ".cbegin(); \n";//A const_iterator to the beginning of the sequence.
 			}
 			break;
 		case 3:
 			if (record_1.length != 0) {
-				op += "set_" + std::to_string(current) + ".cend(); \n";//A const_iterator to the element past the end of the sequence.
+				op += "	set_" + std::to_string(current) + ".cend(); \n";//A const_iterator to the element past the end of the sequence.
 			}
 			break;
 		case 4:
-			op += "set_" + std::to_string(current) + ".clear(); \n";//clean all
+			op += "	set_" + std::to_string(current) + ".clear(); \n";//clean all
 			local_records[current].length = 0;
 			break;
 		case 5:
-			op += "set_" + std::to_string(current) + ".count(" + generate_set_element(record_1.type) + "); \n";//A const_iterator to the element past the end of the sequence.
+			op += "	set_" + std::to_string(current) + ".count(" + generate_set_element(record_1.type) + "); \n";//A const_iterator to the element past the end of the sequence.
 			break;
 		case 6:
 			if (record_1.length != 0) {
-				op += "set_" + std::to_string(current) + ".crbegin(); \n";//A const_reverse_iterator to the reverse beginning of the sequence.
+				op += "	set_" + std::to_string(current) + ".crbegin(); \n";//A const_reverse_iterator to the reverse beginning of the sequence.
 			}
 			break;
 		case 7:
 			if (record_1.length != 0) {
-				op += "set_" + std::to_string(current) + ".crend(); \n";//A const_reverse_iterator to the reverse end of the sequence.
+				op += "	set_" + std::to_string(current) + ".crend(); \n";//A const_reverse_iterator to the reverse end of the sequence.
 			}
 			break;
 		case 8:
 			//TODO:need optimization
 			if (record_1.type == "int" or record_1.type == "double" or record_1.type == "char" or record_1.type == "float" or record_1.type == "bool") {
-				op += "set_" + std::to_string(current) + ".emplace(" + generate_set_element(record_1.type) + "); \n";
+				op += "	set_" + std::to_string(current) + ".emplace(" + generate_set_element(record_1.type) + "); \n";
 			}
 			else if (record_1.type == "std::vector<int>") 
-				op += "set_" + std::to_string(current) + ".emplace(std::set<int>" + generate_set_element(record_1.type) + "); \n";
+				op += "	set_" + std::to_string(current) + ".emplace(std::set<int>" + generate_set_element(record_1.type) + "); \n";
 			else if (record_1.type == "std::vector<float>")
-				op += "set_" + std::to_string(current) + ".emplace(std::set<float>" + generate_set_element(record_1.type) + "); \n";
+				op += "	set_" + std::to_string(current) + ".emplace(std::set<float>" + generate_set_element(record_1.type) + "); \n";
 			else if (record_1.type == "std::vector<double>")
-				op += "set_" + std::to_string(current) + ".emplace(std::set<double>" + generate_set_element(record_1.type) + "); \n";
+				op += "	set_" + std::to_string(current) + ".emplace(std::set<double>" + generate_set_element(record_1.type) + "); \n";
 			else if (record_1.type == "std::vector<char>")
-				op += "set_" + std::to_string(current) + ".emplace(std::set<char>" + generate_set_element(record_1.type) + "); \n";
+				op += "	set_" + std::to_string(current) + ".emplace(std::set<char>" + generate_set_element(record_1.type) + "); \n";
 			else if (record_1.type == "std::vector<bool>")
-				op += "set_" + std::to_string(current) + ".emplace(std::set<bool>" + generate_set_element(record_1.type) + "); \n";
+				op += "	set_" + std::to_string(current) + ".emplace(std::set<bool>" + generate_set_element(record_1.type) + "); \n";
 			// If the function successfully inserts the element(because no equivalent element existed already in the set), 
 			// the function returns a pair of an iterator to the newly inserted element and a value of true.
 			if (record_1.type != "bool") {
-				local_records[current].length += 1;
+				local_records[current].length += 1* loop_index;
 				}
 			break;
 		case 9:
@@ -271,58 +285,58 @@ std::string random_set_op(int n, std::vector<set_records> records) {
 			//op += "set_" + std::to_string(current) + ".emplace_hint(set_" + std::to_string(current) + ".find(" + std::to_string(random_Int(1, 100)) + ")," + std::to_string(random_Int(1, 100)) + "); \n";
 			break;
 		case 10:
-			op += "set_" + std::to_string(current) + ".empty(); \n";//true if the container size is 0, false otherwise.
+			op += "	set_" + std::to_string(current) + ".empty(); \n";//true if the container size is 0, false otherwise.
 			break;
 		case 11:
 			if (record_1.length != 0) {
-				op += "set_" + std::to_string(current) + ".end(); \n";//An iterator to the past-the-end element in the container.
+				op += "	set_" + std::to_string(current) + ".end(); \n";//An iterator to the past-the-end element in the container.
 			}
 			break;
 		case 12:
-			op += "auto range_" + std::to_string(m) + " = set_" + std::to_string(current) + ".equal_range(" + generate_set_element(record_1.type) + "); \n";
+			op += "	auto range_" + std::to_string(m) + " = set_" + std::to_string(current) + ".equal_range(" + generate_set_element(record_1.type) + "); \n";
 			//The function returns a pair, whose member pair::first is the lower bound of the range (the same as lower_bound), and pair::second is the upper bound (the same as upper_bound).
 			break;
 		case 13:
 			if (record_1.length != 0) {
-				op += "auto it_"+std::to_string(m) + " = next(set_" + std::to_string(current) + ".begin(), " + std::to_string(random_Int(0, record_1.length - 1)) + "); \n";
-				op += "set_" + std::to_string(current) + ".erase(it_" + std::to_string(m) + "); \n";//For the value-based version (2), the function returns the number of elements erased.
-				local_records[current].length -= 1;
+				op += "	auto it_"+std::to_string(m) + " = next(set_" + std::to_string(current) + ".begin(), " + std::to_string(random_Int(0, record_1.length - 1)) + "); \n";
+				op += "	set_" + std::to_string(current) + ".erase(it_" + std::to_string(m) + "); \n";//For the value-based version (2), the function returns the number of elements erased.
+				local_records[current].length -= 1 * loop_index;
 			}
 			break;
 		case 14:
-			op += "auto it_" + std::to_string(m) + " = set_" + std::to_string(current) + ".find(" + generate_set_element(record_1.type) + ");\n"; //An iterator to the element, if val is found, or set::end otherwise.
+			op += "	auto it_" + std::to_string(m) + " = set_" + std::to_string(current) + ".find(" + generate_set_element(record_1.type) + ");\n"; //An iterator to the element, if val is found, or set::end otherwise.
 			break;
 		case 15:
-			op += "auto alloc_" + std::to_string(m) + " = set_" + std::to_string(current) + ".get_allocator();\n";//Member type allocator_type is the type of the allocator used by the container, defined in set as an alias of its third template parameter
+			op += "	auto alloc_" + std::to_string(m) + " = set_" + std::to_string(current) + ".get_allocator();\n";//Member type allocator_type is the type of the allocator used by the container, defined in set as an alias of its third template parameter
 			break;
 		case 16:
-			op += "set_" + std::to_string(current) + ".insert(" + generate_set_element(record_1.type) + "); \n";//For the value-based version (2), the function returns the number of elements erased.
-			if (record_1.length != 0) {
-				local_records[current].length += 1;
+			op += "	set_" + std::to_string(current) + ".insert(" + generate_set_element(record_1.type) + "); \n";//For the value-based version (2), the function returns the number of elements erased.
+			if (record_1.type != "std::vector<bool>" and record_1.type != "bool") {
+				local_records[current].length += 1 * loop_index;
 			}
 			break;
 		case 17:
-			op += "auto mycomp_" + std::to_string(m) + " = set_" + std::to_string(current) + ".key_comp();\n"; //The comparison object.
+			op += "	auto mycomp_" + std::to_string(m) + " = set_" + std::to_string(current) + ".key_comp();\n"; //The comparison object.
 			break;
 		case 18:
-			op += "auto itlow_" + std::to_string(m) + " = set_" + std::to_string(current) + ".lower_bound(" + generate_set_element(record_1.type) + ");\n";
+			op += "	auto itlow_" + std::to_string(m) + " = set_" + std::to_string(current) + ".lower_bound(" + generate_set_element(record_1.type) + ");\n";
 			//Returns an iterator pointing to the first element in the container which is not considered to go before val (i.e., either it is equivalent or goes after).
 			break;
 		case 19:
-			op += "set_" + std::to_string(current) + ".max_size();\n"; //The maximum number of elements a set container can hold as content.
+			op += "	set_" + std::to_string(current) + ".max_size();\n"; //The maximum number of elements a set container can hold as content.
 			break;
 		case 20:
-			op += "set_" + std::to_string(current) + ".rbegin();\n"; //A reverse iterator to the reverse beginning of the sequence container.
+			op += "	set_" + std::to_string(current) + ".rbegin();\n"; //A reverse iterator to the reverse beginning of the sequence container.
 			break;
 		case 21:
-			op += "set_" + std::to_string(current) + ".rend();\n"; //A reverse iterator to the reverse end of the sequence container.
+			op += "	set_" + std::to_string(current) + ".rend();\n"; //A reverse iterator to the reverse end of the sequence container.
 			break;
 		case 22:
-			op += "set_" + std::to_string(current) + ".size();\n"; //The number of elements in the container.
+			op += "	set_" + std::to_string(current) + ".size();\n"; //The number of elements in the container.
 			break;
 		case 23:
 			if (record_1.type == record_2.type && current != current_2) {
-				op += "set_" + std::to_string(current) + ".swap(set_" + std::to_string(current_2) + ");\n"; // Swap two vectors
+				op += "	set_" + std::to_string(current) + ".swap(set_" + std::to_string(current_2) + ");\n"; // Swap two vectors
 				tmp_length = local_records[current].length;
 				tmp_length_2 = local_records[current_2].length;
 				local_records[current].length = tmp_length_2;
@@ -330,7 +344,7 @@ std::string random_set_op(int n, std::vector<set_records> records) {
 			}
 			break;
 		case 24:
-			op += "auto ithigh_" + std::to_string(m) + " = set_" + std::to_string(current) + ".upper_bound(" + generate_set_element(record_1.type) + ");\n";
+			op += "	auto ithigh_" + std::to_string(m) + " = set_" + std::to_string(current) + ".upper_bound(" + generate_set_element(record_1.type) + ");\n";
 			//An iterator to the the first element in the container which is considered to go after val, or set::end if no elements are considered to go after val.
 			break;
 		}
@@ -338,9 +352,146 @@ std::string random_set_op(int n, std::vector<set_records> records) {
 
 
 	}
-	return op;
+	records = local_records;
+	return { op,records };
 }
 
+std::string random_set_loop(int number_of_index, std::vector<set_records> set_records, int operation_loop_numbers = random_Int(5, 5)) {
+	std::string op;
+	int current = 0;
+	for (int m = 1; m <= operation_loop_numbers; m++) {
+		current = random_Int(0, number_of_index - 1);
+		auto record_1 = set_records.at(current);
+		int for_loop_size = random_Int(0, 5);
+		switch (random_Int(1, 8)) {
+		case 1:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	auto index_set_" + std::to_string(m) + " = set_" + std::to_string(current) + ".begin();\n";
+				op += "	std::advance(index_set_" + std::to_string(m) + ", " + std::to_string(idx) + ");\n";
+				op += "	if ( *index_set_" + std::to_string(m) + " > " + generate_set_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				set_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 2:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	auto index_set_" + std::to_string(m) + " = set_" + std::to_string(current) + ".begin();\n";
+				op += "	std::advance(index_set_" + std::to_string(m) + ", " + std::to_string(idx) + ");\n";
+				op += "	if ( *index_set_" + std::to_string(m) + " < " + generate_set_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				set_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 3:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	auto index_set_" + std::to_string(m) + " = set_" + std::to_string(current) + ".begin();\n";
+				op += "	std::advance(index_set_" + std::to_string(m) + ", " + std::to_string(idx) + ");\n";
+				op += "	if ( *index_set_" + std::to_string(m) + " <= " + generate_set_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				set_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 4:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	auto index_set_" + std::to_string(m) + " = set_" + std::to_string(current) + ".begin();\n";
+				op += "	std::advance(index_set_" + std::to_string(m) + ", " + std::to_string(idx) + ");\n";
+				op += "	if ( *index_set_" + std::to_string(m) + " >= " + generate_set_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				set_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 5:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	auto index_set_" + std::to_string(m) + " = set_" + std::to_string(current) + ".begin();\n";
+				op += "	std::advance(index_set_" + std::to_string(m) + ", " + std::to_string(idx) + ");\n";
+				op += "	if ( *index_set_" + std::to_string(m) + " == " + generate_set_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				set_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 6:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	auto index_set_" + std::to_string(m) + " = set_" + std::to_string(current) + ".begin();\n";
+				op += "	std::advance(index_set_" + std::to_string(m) + ", " + std::to_string(idx) + ");\n";
+				op += "	if ( *index_set_" + std::to_string(m) + " != " + generate_set_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_set_op(number_of_index, set_records, random_Int(0, 5));
+				set_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		//case 7:
+		//	if (record_1.length > for_loop_size) {
+		//		op += "	for (int index = 0; index < " + std::to_string(for_loop_size) + "; index ++) {\n";
+		//		auto [temp_string, temp_records] = random_set_op(number_of_index, set_records, 1, for_loop_size);
+		//		set_records = temp_records;
+		//		op += temp_string;
+		//		op += "	}\n";
+		//	}
+		//	break;
+
+		//case 8:
+		//	if (record_1.length > for_loop_size) {
+		//		op += "	int index_set_" + std::to_string(m) + "= 0;\n";
+		//		op += "	while (index_set_" + std::to_string(m) + " < " + std::to_string(for_loop_size) + ") {\n";
+		//		auto [temp_string, temp_records] = random_set_op(number_of_index, set_records, 1, for_loop_size);
+		//		set_records = temp_records;
+		//		op += temp_string;
+		//		op += "	index_set_" + std::to_string(m) + "++;\n";
+		//		op += "	}\n";
+		//	}
+		//	break;
+		}
+		//std::cout << op << std::endl;
+	}
+	return op;
+}
 
 
 
@@ -386,7 +537,7 @@ std::string create_set(int index) {
 
 	for (int n = 0; n < index; n++) {
 
-		switch (random_Int(1, 10)) {
+		switch (random_Int(1, 5)) {
 		case 1:
 			type = "int";
 			data_type = INT;
@@ -691,14 +842,21 @@ std::string create_set(int index) {
 	}
 
 	//random operations generated
-	code += random_set_op(index, set_records);
+	auto [temp_string, temp_records] = random_set_op(index, set_records);
+	code += temp_string;
+	set_records = temp_records;
+
+	code += random_set_loop(index, set_records, 1);
 
 	//code += "	std::vector<uint8_t> buffer;\n";
 	for (int m = 0; m < index; m++) {
-		code += "	std::vector<" + set_records[m].type + "> newset_" + std::to_string(m) + "(set_" + std::to_string(m) + ".begin(), set_" + std::to_string(m) + ".end());\n";
+		code += "	std::vector<" + set_records[m].type + "> newset_" + std::to_string(m) + ";\n";
+		code += "   for (auto& elem_" + std::to_string(m) + " : set_" + std::to_string(m) + ") {\n";
+		code += "   		newset_" + std::to_string(m) + ".push_back(elem_" + std::to_string(m) + ");\n";
+		code += "    }\n";
 		code += "	append_data(buffer, newset_" + std::to_string(m) + ");\n";
 
-	}
+	} 
 
 	code += "\n";
 

@@ -7,10 +7,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstdio>
-#include <format>
 #include <initializer_list>
 #include <string>
-#include "Vector_create.h"
+#include "Random_program.h"
 #include <sstream>
 
 
@@ -19,7 +18,10 @@ int randomInt(int min, int max) {
 }
 
 int random_Int(int min, int max) {
-	return min + rand() % (max - min + 1);
+	if (max <= 0)
+		return 0;
+	else
+		return min + rand() % (max - min + 1);
 }
 
 // Function to generate a random float in a given range
@@ -206,15 +208,32 @@ std::string generate_element(std::string type) {
 
 }
 
+std::vector<vector_records> merge_records_min_length(
+	const std::vector<vector_records>& records1,
+	const std::vector<vector_records>& records2
+) {
+	std::vector<vector_records> merged;
+	size_t size = std::min(records1.size(), records2.size());
+	merged.reserve(size);
 
+	for (size_t i = 0; i < size; ++i) {
+		vector_records merged_record;
+		merged_record.type = records1[i].type; // 你也可以选择 records2[i].type 或做一致性判断
+		merged_record.length = std::min(records1[i].length, records2[i].length);
+		merged.push_back(merged_record);
+	}
 
-std::string random_vec_op(int n, std::vector<vector_records> vec_records) {
+	return merged;
+}
+
+std::pair<std::string, std::vector<vector_records>> random_vec_op(int n, std::vector<vector_records> vec_records, int operation_numbers = 10,int loop_index = 1) {
 	std::string op;
-	int operation_numbers = randomInt(30, 100);
 	int current = 0;
 	int current_2 = 0;
 	std::vector<vector_records> local_records = vec_records;
-	int random_size = randomInt(5, 100);
+	int random_size = randomInt(0, 19);
+
+	//移出所有已生成函数的rdm
 
 	for (int m = 1; m <= operation_numbers; m++) {
 		current = randomInt(0, n - 1);
@@ -223,48 +242,48 @@ std::string random_vec_op(int n, std::vector<vector_records> vec_records) {
 		auto record_2 = local_records.at(current_2);
 		int tmp_length;
 		int tmp_length_2;
-		switch (randomInt(1, 32)) {
+		switch (randomInt(1, 31)) {
 		case 1:
 			op += "	vec_" + std::to_string(current) + ".push_back(" + generate_element(record_1.type) + "); \n";//Adds an element to the end of the vector.
-			local_records[current].length += 1;
+			local_records[current].length += 1* loop_index;
 			break;
 		case 2:
-			op += "	vec_" + std::to_string(current) + ".insert(vec_" + std::to_string(current) + ".begin() +" + std::to_string(random_Int(0, record_1.length - 1)) + "," + generate_element(record_1.type) + "); \n"; //insert at certain place
-			local_records[current].length += 1;
+			if (record_1.length == 0) {
+				op += "	vec_" + std::to_string(current) + ".insert(vec_" + std::to_string(current) + ".begin()," + generate_element(record_1.type) + "); \n"; //insert at certain place
+			}
+			else {
+				op += "	vec_" + std::to_string(current) + ".insert(vec_" + std::to_string(current) + ".begin() +" + std::to_string(random_Int(0, record_1.length - 1)) + "," + generate_element(record_1.type) + "); \n"; //insert at certain place
+			}
+			local_records[current].length += 1* loop_index;
 			break;
 		case 3:
 			if (record_1.length != 0) {
-				op += "	vec_" + std::to_string(current) + ".erase(vec_" + std::to_string(current) + ".begin() +" + std::to_string(random_Int(0, record_1.length - 1))+ "); \n";
-				local_records[current].length -= 1;
+				op += "	vec_" + std::to_string(current) + ".erase(vec_" + std::to_string(current) + ".begin() +" + std::to_string(random_Int(0, record_1.length - 1)) + "); \n";
+				local_records[current].length -= 1* loop_index;
 			}
 			break;
 		case 4:
 			if (record_1.length != 0) {
 				op += "	vec_" + std::to_string(current) + ".pop_back();\n";
-				local_records[current].length -= 1;
+				local_records[current].length -= 1* loop_index;
 			}
 			break;
 		case 5:
-			op += "	vec_" + std::to_string(current) + ".resize(" + std::to_string(random_size) + ","+ generate_element(record_1.type) + ");\n";
+			op += "	vec_" + std::to_string(current) + ".resize(" + std::to_string(random_size) + "," + generate_element(record_1.type) + ");\n";
 			local_records[current].length = random_size;
 			break;
 		case 6:
-			op += "	std::reverse(vec_" + std::to_string(current) + ".begin(), vec_" + std::to_string(current) + ".end());\n";
-			break;
-		case 7:
-			op += "	std::sort(vec_" + std::to_string(current) + ".begin(), vec_" + std::to_string(current) + ".end());\n";
-			break;
-		case 8:
 			op += "	vec_" + std::to_string(current) + ".clear();\n";
 			local_records[current].length = 0;
 			break;
-		case 9:
-			op += "	vec_" + std::to_string(current) + ".assign(" + std::to_string(random_Int(1,100))+"," + generate_element(record_1.type) + ");\n";
+		case 7:
+			op += "	vec_" + std::to_string(current) + ".assign(static_cast<size_t> (" + std::to_string(random_size) + "), " + generate_element(record_1.type) + ");\n";
+			local_records[current].length = random_size;
 			break;
-		case 10:
+		case 8:
 			op += "	vec_" + std::to_string(current) + ".shrink_to_fit();\n"; // Reduce capacity to fit size
 			break;
-		case 11:
+		case 9:
 			if (record_1.type == record_2.type && current != current_2) {
 				op += "	vec_" + std::to_string(current) + ".swap(vec_" + std::to_string(current_2) + ");\n"; // Swap two vectors
 				tmp_length = local_records[current].length;
@@ -273,7 +292,7 @@ std::string random_vec_op(int n, std::vector<vector_records> vec_records) {
 				local_records[current_2].length = tmp_length;
 			}
 			break;
-		case 12:
+		case 10:
 			if (record_1.type == "int" or record_1.type == "double" or record_1.type == "char" or record_1.type == "float" or record_1.type == "bool") {
 				op += "	vec_" + std::to_string(current) + ".emplace_back(" + generate_element(record_1.type) + ");\n"; // Efficient push_back
 			}
@@ -287,105 +306,270 @@ std::string random_vec_op(int n, std::vector<vector_records> vec_records) {
 				op += "	vec_" + std::to_string(current) + ".emplace_back(std::initializer_list<char>" + generate_element(record_1.type) + ");\n"; // Efficient push_back
 			else if (record_1.type == "std::vector<bool>")
 				op += "	vec_" + std::to_string(current) + ".emplace_back(std::initializer_list<bool>" + generate_element(record_1.type) + ");\n"; // Efficient push_back
-			local_records[current].length += 1;
+			local_records[current].length += 1* loop_index;
 			break;
-		case 13:
+		case 11:
 			op += "	vec_" + std::to_string(current) + ".capacity();\n"; // Print capacity
 			break;
-		case 14:
+		case 12:
 			op += "	vec_" + std::to_string(current) + ".size();\n"; //Returns the number of elements in the vector.
 			break;
-		case 15:
+		case 13:
 			op += "	vec_" + std::to_string(current) + ".max_size();\n"; //Returns the maximum number of elements that the vector can hold.
 			break;
-		case 16:
+		case 14:
 			op += "	vec_" + std::to_string(current) + ".empty();\n"; //Checks if the vector is empty.
 			break;
-		case 17:
+		case 15:
 			if (record_1.length != 0) {
-			op += "	vec_" + std::to_string(current) + ".at(RdmInt(0, vec_" + std::to_string(current) + ".size()-1)); \n"; //Accesses the element at a specific position, with bounds checking.
+				op += "	vec_" + std::to_string(current) + ".at(" + std::to_string(random_Int(0, record_1.length - 1)) + "); \n"; //Accesses the element at a specific position, with bounds checking.
 			}
 			break;
-		case 18:
+		case 16:
 			if (record_1.length != 0) {
 				op += "	vec_" + std::to_string(current) + ".front();\n"; //Accesses the first element of the vector
 			}
 			break;
-		case 19:
+		case 17:
 			if (record_1.length != 0) {
 				op += "	vec_" + std::to_string(current) + ".back();\n"; //Accesses the last element of the vector
 			}
 			break;
-		case 20:
+		case 18:
 			op += "	vec_" + std::to_string(current) + ".begin();\n"; //Returns an iterator pointing to the first element of the vector
 			break;
-		case 21:
+		case 19:
 			op += "	vec_" + std::to_string(current) + ".end();\n"; // Returns an iterator pointing to the past-the-end element of the vector
 			break;
-		case 22:
+		case 20:
 			op += "	vec_" + std::to_string(current) + ".rbegin();\n"; //Returns a reverse iterator pointing to the last element of the vector
 			break;
-		case 23:
+		case 21:
 			op += "	vec_" + std::to_string(current) + ".rend();\n"; // Returns a reverse iterator pointing to the element preceding the first element of the vector
 			break;
-		case 24:
+		case 22:
 			op += "	vec_" + std::to_string(current) + ".cbegin();\n"; //Returns const_iterator to beginning
 			break;
-		case 25:
+		case 23:
 			op += "	vec_" + std::to_string(current) + ".cend();\n"; // Returns const_iterator to end
 			break;
-		case 26:
+		case 24:
 			op += "	vec_" + std::to_string(current) + ".crbegin();\n"; //Returns const_reverse_iterator to reverse beginning
 			break;
-		case 27:
+		case 25:
 			op += "	vec_" + std::to_string(current) + ".crend();\n"; // Returns const_reverse_iterator to reverse end
 			break;
-		case 28:
+		case 26:
 			op += "	vec_" + std::to_string(current) + ".shrink_to_fit();\n"; // Reduces memory usage by freeing unused space.
 			break;
 
-		case 29:
+		case 27:
 
 			if (record_1.type == "int" or record_1.type == "double" or record_1.type == "char" or record_1.type == "float" or record_1.type == "bool") {
-				op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + RdmInt(0, vec_" + std::to_string(current) + ".size()-1) ," + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				if (record_1.length == 0) {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin()," + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+				else {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + " + std::to_string(random_Int(0, record_1.length - 1)) + ", " + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+
+				}
 			}
 			else if (record_1.type == "std::vector<int>")
 			{
-				op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + RdmInt(0, vec_" + std::to_string(current) + ".size()-1) ,std::initializer_list<int>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				if (record_1.length == 0) {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin(), std::initializer_list<int>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+				else {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() +" + std::to_string(random_Int(0, record_1.length - 1)) + ", std::initializer_list<int>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
 			}
-			else if (record_1.type == "std::vector<float>")
-				op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + RdmInt(0, vec_" + std::to_string(current) + ".size()-1) ,std::initializer_list<float>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
-			else if (record_1.type == "std::vector<double>")
-				op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + RdmInt(0, vec_" + std::to_string(current) + ".size()-1) ,std::initializer_list<double>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
-			else if (record_1.type == "std::vector<char>")
-				op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + RdmInt(0, vec_" + std::to_string(current) + ".size()-1) ,std::initializer_list<char>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
-			else if(record_1.type == "std::vector<bool>")
-				op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + RdmInt(0, vec_" + std::to_string(current) + ".size()-1) ,std::initializer_list<bool>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
-			local_records[current].length += 1;
-			break;
-		case 30:
-			op += "	vec_" + std::to_string(current) + ".reserve(" + std::to_string(randomInt(1, 10000)) + "); \n"; // Requests that the vector capacity be at least enough to contain a specified number of elements.
-			break;
+			else if (record_1.type == "std::vector<float>") {
+				if (record_1.length == 0) {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin(), std::initializer_list<float>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+				else {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + " + std::to_string(random_Int(0, record_1.length - 1)) + ", std::initializer_list<float>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
 
+				}
+			}
+			else if (record_1.type == "std::vector<double>") {
+				if (record_1.length == 0) {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin(), std::initializer_list<double>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+				else {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + " + std::to_string(random_Int(0, record_1.length - 1)) + ", std::initializer_list<double>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+
+				}
+			}
+			else if (record_1.type == "std::vector<char>") {
+				if (record_1.length == 0) {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin(), std::initializer_list<char>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+				else {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + " + std::to_string(random_Int(0, record_1.length - 1)) + ", std::initializer_list<char>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+			}
+			else if (record_1.type == "std::vector<bool>") {
+				if (record_1.length == 0) {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin(), std::initializer_list<bool>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+				else {
+					op += "	vec_" + std::to_string(current) + ".emplace(vec_" + std::to_string(current) + ".begin() + " + std::to_string(random_Int(0, record_1.length - 1)) + ", std::initializer_list<bool>" + generate_element(record_1.type) + "); \n"; // Constructs and inserts an element in the vector.
+				}
+			}
+
+			local_records[current].length += 1* loop_index;
+			break;
+		case 28:
+			op += "	vec_" + std::to_string(current) + ".reserve(" + std::to_string(randomInt(1, 100)) + "); \n"; // Requests that the vector capacity be at least enough to contain a specified number of elements.
+			break;
 
 
 		}
+
+
+
 
 	}
 
 
 
-
-	return op;
+	vec_records = local_records;
+	return { op,vec_records };
 }
 
+std::string random_vec_loop(int number_of_index, std::vector<vector_records> vec_records, int operation_loop_numbers = random_Int(5,5)){
+	std::string op;
+	//std::vector<vector_records> local_records = vec_records;
+	int current = 0;
+	for (int m = 1; m <= operation_loop_numbers; m++) {
+		current = randomInt(0, number_of_index - 1);
+		auto record_1 = vec_records.at(current);
+		int for_loop_size = random_Int(0, 5);
+		switch (random_Int(1, 8)) {
+		case 1:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	if (vec_" + std::to_string(current) + "[" + std::to_string(idx) + "] > " + generate_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				vec_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 2:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	if (vec_" + std::to_string(current) + "[" + std::to_string(idx) + "] < " + generate_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				vec_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 3:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	if (vec_" + std::to_string(current) + "[" + std::to_string(idx) + "] <= " + generate_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				vec_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 4:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	if (vec_" + std::to_string(current) + "[" + std::to_string(idx) + "] >= " + generate_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				vec_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 5:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	if (vec_" + std::to_string(current) + "[" + std::to_string(idx) + "] == " + generate_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				vec_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		case 6:
+			// multiple layer of if/else：insert/replace element
+			if (record_1.length > 0) {
+				int idx = random_Int(0, record_1.length - 1);
+				op += "	if (vec_" + std::to_string(current) + "[" + std::to_string(idx) + "] != " + generate_element(record_1.type) + ") {\n";
+				auto [temp_string_1, temp_records_1] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				op += temp_string_1;
+				op += "	}\n";
+				op += "	else {\n";
+				auto [temp_string_2, temp_records_2] = random_vec_op(number_of_index, vec_records, random_Int(0, 5));
+				vec_records = merge_records_min_length(temp_records_1, temp_records_2);
+				op += temp_string_2;
+				op += "	}\n";
+			}
+			break;
+		//case 7:
+		//	if (record_1.length > for_loop_size) {
+		//		op += "	for (int index = 0; index < " + std::to_string(for_loop_size) + "; index ++) {\n";
+		//		auto [temp_string, temp_records] = random_vec_op(number_of_index, vec_records, 1, for_loop_size);
+		//		vec_records = temp_records;
+		//		op += temp_string;
+		//		op += "	}\n";
+		//	}
+		//	break;
 
+		//case 8:
+		//	if (record_1.length > for_loop_size) {
+		//		op += "	int index_vec_" + std::to_string(m) + "= 0;\n";
+		//		op += "	while (index_vec_" + std::to_string(m) + " < " + std::to_string(for_loop_size) + ") {\n";
+		//		auto [temp_string, temp_records] = random_vec_op(number_of_index, vec_records, 1, for_loop_size);
+		//		vec_records = temp_records;
+		//		op += temp_string;
+		//		op += "	index_vec_" + std::to_string(m) + "++;\n";
+		//		op += "	}\n";
+		//	}
+		//	break;
+		}
+		//std::cout << op << std::endl;
+	}
+	return op;
+}
 
 std::string create_vec(int index) {
 	std::string code;
 	std::string oss;
 	std::string type;
-	int vec_elements_num = random_Int(5, 10);
+	int vec_elements_num = random_Int(1, 20);
+
 	/*int vec_rows = random_Int(1, 2);*/
 	int vec_rows = 2;// 1 for 1D vector
 	//temp vectors
@@ -405,6 +589,7 @@ std::string create_vec(int index) {
 
 	std::vector<vector_records> vec_records;
 
+
 	enum aval_Type {
 		INT,
 		DOUBLE,
@@ -423,8 +608,9 @@ std::string create_vec(int index) {
 
 
 	for (int n = 0; n < index; n++) {
-
-		switch (random_Int(1, 10))
+		int creation_type = random_Int(1, 3);
+		int vector_selection = random_Int(0, vec_records.size() - 1);
+		switch (random_Int(1, 5))
 			/*switch (1)*/ {
 		case 1:
 			type = "int";
@@ -588,159 +774,169 @@ std::string create_vec(int index) {
 
 
 			}
-			//for (const auto& row : temp_2d_int) {
-			//	for (const auto& val : row) {
-			//		std::cout << val << " ";
-			//	}
-			//	std::cout << std::endl;
-			//}
 
 			code += "	std::vector<" + type + "> vec_" + std::to_string(n) + " = { {" + oss + " };\n";
 			oss = {};
 		}
 
 		else {
-			switch (data_type) {
-			case INT:
-				temp_int = create_vec_int(vec_elements_num);
-				break;
+			// 1D-creation
+			switch (creation_type) {
+			case 1:
 
-			case FLOAT:
-				temp_float = create_vec_float(vec_elements_num);
-				break;
-
-			case DOUBLE:
-				temp_double = create_vec_double(vec_elements_num);
-				break;
-
-			case CHAR:
-				temp_char = create_vec_char(vec_elements_num);
-				break;
-
-			case BOOL:
-				temp_bool = create_vec_bool(vec_elements_num);
-				break;
-
-			}
-
-
-
-			if (data_type == INT) {
-
-				for (int i = 1; i <= vec_elements_num; i++) {
-					oss += std::to_string(temp_int[i - 1]);
-					if (i != vec_elements_num) {
-						oss += ", "; // Add a separator between numbers
+				switch (data_type) {
+				case INT:
+					temp_int = create_vec_int(vec_elements_num);
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_int[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
 					}
+
+					temp_int = {};
+					break;
+
+				case FLOAT:
+					temp_float = create_vec_float(vec_elements_num);
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_float[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
+
+					temp_float = {};
+					break;
+
+				case DOUBLE:
+					temp_double = create_vec_double(vec_elements_num);
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_double[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
+
+					temp_double = {};
+					break;
+
+				case CHAR:
+					temp_char = create_vec_char(vec_elements_num);
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_char[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
+
+					temp_char = {};
+					break;
+
+				case BOOL:
+					temp_bool = create_vec_bool(vec_elements_num);
+					for (int i = 1; i <= vec_elements_num; i++) {
+						oss += std::to_string(temp_bool[i - 1]);
+						if (i != vec_elements_num) {
+							oss += ", "; // Add a separator between numbers
+						}
+					}
+					temp_bool = {};
+					break;
+
 				}
 
-				temp_int = {};
-			}
-			else if (data_type == FLOAT) {
-				for (int i = 1; i <= vec_elements_num; i++) {
-					oss += std::to_string(temp_float[i - 1]);
-					if (i != vec_elements_num) {
-						oss += ", "; // Add a separator between numbers
-					}
+
+				code += "	std::vector<" + type + "> vec_" + std::to_string(n) + " = {" + oss + "};\n";
+				oss = {};
+				break;
+			case 2:
+
+				code += "	std::vector<" + type + "> vec_" + std::to_string(n) + "(" + std::to_string(vec_elements_num) + ", "
+					+ generate_element(type) + ");\n";
+				break;
+
+			case 3:
+				if (n > 0 && type == vec_records[vector_selection].type) {
+					code += "	std::vector<" + type + "> vec_" + std::to_string(n) + "(vec_" + std::to_string(vector_selection) + ".begin(), vec_" + std::to_string(vector_selection) + ".end());\n";
 				}
+				else {
+					switch (data_type) {
+					case INT:
+						temp_int = create_vec_int(vec_elements_num);
+						for (int i = 1; i <= vec_elements_num; i++) {
+							oss += std::to_string(temp_int[i - 1]);
+							if (i != vec_elements_num) {
+								oss += ", "; // Add a separator between numbers
+							}
+						}
 
-				temp_float = {};
-			}
+						temp_int = {};
+						break;
 
+					case FLOAT:
+						temp_float = create_vec_float(vec_elements_num);
+						for (int i = 1; i <= vec_elements_num; i++) {
+							oss += std::to_string(temp_float[i - 1]);
+							if (i != vec_elements_num) {
+								oss += ", "; // Add a separator between numbers
+							}
+						}
 
-			else if (data_type == DOUBLE) {
-				for (int i = 1; i <= vec_elements_num; i++) {
-					oss += std::to_string(temp_double[i - 1]);
-					if (i != vec_elements_num) {
-						oss += ", "; // Add a separator between numbers
+						temp_float = {};
+						break;
+
+					case DOUBLE:
+						temp_double = create_vec_double(vec_elements_num);
+						for (int i = 1; i <= vec_elements_num; i++) {
+							oss += std::to_string(temp_double[i - 1]);
+							if (i != vec_elements_num) {
+								oss += ", "; // Add a separator between numbers
+							}
+						}
+
+						temp_double = {};
+						break;
+
+					case CHAR:
+						temp_char = create_vec_char(vec_elements_num);
+						for (int i = 1; i <= vec_elements_num; i++) {
+							oss += std::to_string(temp_char[i - 1]);
+							if (i != vec_elements_num) {
+								oss += ", "; // Add a separator between numbers
+							}
+						}
+
+						temp_char = {};
+						break;
+
+					case BOOL:
+						temp_bool = create_vec_bool(vec_elements_num);
+						for (int i = 1; i <= vec_elements_num; i++) {
+							oss += std::to_string(temp_bool[i - 1]);
+							if (i != vec_elements_num) {
+								oss += ", "; // Add a separator between numbers
+							}
+						}
+						temp_bool = {};
+						break;
+
 					}
+					code += "	std::vector<" + type + "> vec_" + std::to_string(n) + " = {" + oss + "};\n";
+					oss = {};
 				}
-
-				temp_double = {};
 			}
-
-			else if (data_type == CHAR) {
-				for (int i = 1; i <= vec_elements_num; i++) {
-					oss += std::to_string(temp_char[i - 1]);
-					if (i != vec_elements_num) {
-						oss += ", "; // Add a separator between numbers
-					}
-				}
-
-				temp_char = {};
-			}
-
-			else {
-				for (int i = 1; i <= vec_elements_num; i++) {
-					oss += std::to_string(temp_bool[i - 1]);
-					if (i != vec_elements_num) {
-						oss += ", "; // Add a separator between numbers
-					}
-				}
-				temp_bool = {};
-			}
-
-
-			//print out secton
-
-			code += "	std::vector<" + type + "> vec_" + std::to_string(n) + " = {" + oss + "};\n";
-			oss = {};
-
-			//This is about print out each vector
-			/*if (data_type == INT) {
-
-				code += "for (int num : vec_" + std::to_string(n) + ") { \n";
-
-				code += "	std::cout << num << ' ';\n";
-
-				code += "	std::cout << std::endl;\n";
-				code += "}\n";
-			}
-
-			else if (data_type == FLOAT) {
-				code += "for (float num : vec_" + std::to_string(n) + ") { \n";
-
-				code += "	std::cout << num << ' ';\n";
-
-				code += "	std::cout << std::endl;\n";
-				code += "}\n";
-			}
-
-
-			else if (data_type == DOUBLE) {
-				code += "for (double num : vec_" + std::to_string(n) + ") { \n";
-
-				code += "	std::cout << num << ' ';\n";
-
-				code += "	std::cout << std::endl;\n";
-				code += "}\n";
-			}
-
-			else if (data_type == CHAR) {
-				code += "for (char num : vec_" + std::to_string(n) + ") { \n";
-
-				code += "	std::cout << num << ' ';\n";
-
-				code += "	std::cout << std::endl;\n";
-				code += "}\n";
-			}
-
-			else {
-				code += "for (bool num : vec_" + std::to_string(n) + ") { \n";
-
-				code += "	std::cout << num << ' ';\n";
-
-				code += "	std::cout << std::endl;\n";
-				code += "}\n";
-			}*/
-
-
 
 		}
 
 	}
 	//random operations generated
-	code += random_vec_op(index, vec_records);
+
+	auto [temp_string,temp_records] = random_vec_op(index, vec_records);
+	code += temp_string;
+	vec_records = temp_records;
+
+	code += random_vec_loop(index, vec_records, 1);
 
 	code += "	std::vector<uint8_t> buffer;\n";
 	for (int m = 0; m < index; m++) {
